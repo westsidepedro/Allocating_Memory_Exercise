@@ -45,19 +45,18 @@ int main()
 
     //////////////// ------ or ------ ////////////////
 
-    Dogs *brown = new Dogs[25]; // make 25 brown, starts at 0 remember
+    Dogs *brown = new Dogs[25]; // make 25 dogs class things in(*) 'folder' brown, starts at 0 remember
 
     char nameLetter = 'A';
     for (int num = 0; num < 25; num++, nameLetter++)
 	{
-	string newName(1, nameLetter);
-	brown[num].setName(newName);
-	brown[num].speak2();
+	string newName(1, nameLetter); // create string for the new name
+	brown[num].setName(newName);	// name it
+	brown[num].speak2();		// output it
 	}
     cout << "-----------------------------------" << endl;
     brown[4].speak2();
     cout << "-----------------------------------" << endl;
-
 
     delete[] brown; //delete from mem
 
