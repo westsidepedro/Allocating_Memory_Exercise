@@ -19,20 +19,47 @@ using namespace std;
 int main()
     {
     char letters = 'a';
-    int xTimes = 0;
-    string dogName(1, letters);
+    int x = 0;
+    char *change = &letters;
 
     Dogs *woof = new Dogs[25];
-
-    for (int xTimes = 0; xTimes < 25; xTimes++)
+    while (x < 25)
 	{
-	woof[xTimes].setName(dogName);
-	woof[xTimes].speak();
-	cout << " .I'm number " << xTimes << endl;
+	string dogName(2, *change);
 
+	woof[x].setName(dogName);
+	woof[x].speak();
+
+	cout << ". And I'm number " << x << endl;
+
+	x++;
+	letters++;
 	}
 
+    cout << "-----------------------------------" << endl;
+    woof[17].speak2();
+    cout << "-----------------------------------" << endl;
     delete[] woof;
+
+    cout << endl;
+
+    //////////////// ------ or ------ ////////////////
+
+    Dogs *brown = new Dogs[25]; // make 25 brown, starts at 0 remember
+
+    char nameLetter = 'A';
+    for (int num = 0; num < 25; num++, nameLetter++)
+	{
+	string newName(1, nameLetter);
+	brown[num].setName(newName);
+	brown[num].speak2();
+	}
+    cout << "-----------------------------------" << endl;
+    brown[4].speak2();
+    cout << "-----------------------------------" << endl;
+
+
+    delete[] brown; //delete from mem
 
     return 0;
     }

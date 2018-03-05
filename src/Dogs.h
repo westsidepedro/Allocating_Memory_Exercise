@@ -19,8 +19,8 @@ class Dogs
 	Dogs();		//constructor
 	~Dogs();	//destructor
 	void setName(string nameInput);	//change name
-	void speak();	//output
-
+	void speak();	//output with flush
+	void speak2();	//output with endl
     };
 
 #endif /* DOGS_H_ */
